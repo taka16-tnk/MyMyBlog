@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginBtn;
     private ProgressBar loginProgress;
     private FirebaseAuth mAuth;
-    private Intent HomeActivity;
+    private Intent homeActivity;
     private ImageView loginPhoto;
 
     @Override
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.login_btn);
         loginProgress = findViewById(R.id.login_progress);
         mAuth = FirebaseAuth.getInstance();
-        HomeActivity = new Intent(this, com.app.myblog.activities.HomeActivity.class);
+        homeActivity = new Intent(this, com.app.myblog.activities.HomeNav.class);
         loginPhoto = findViewById(R.id.login_photo);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-        startActivity(HomeActivity);
+        startActivity(homeActivity);
         finish();
     }
 
